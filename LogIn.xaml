@@ -1,0 +1,43 @@
+﻿<Window x:Class="BankManagementSystem.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankManagementSystem" xmlns:viewmodel="clr-namespace:BankManagementSystem.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:LogInViewModel}"
+        mc:Ignorable="d"
+        x:Name="LoginWindow"
+        Title="LogIn" Height="450" Width="800" Loaded="Window_Loaded"
+        WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/LoginBackground.png"/>
+    </Window.Background>
+
+
+    <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Margin="5" VerticalAlignment="Center">
+                <TextBlock 
+                FontSize="{StaticResource TextXL}" 
+                TextAlignment="Center">Login</TextBlock>
+
+            <Label>Email</Label>
+                <TextBox Text="{Binding Email}" x:Name="Email"></TextBox>
+
+                <Label>Password</Label>
+            <PasswordBox   x:Name="txtPassword"></PasswordBox>
+
+                <Button Style="{StaticResource ButtonPrimary}" Margin="0,10"
+                        Command="{Binding LoginCommand}"
+                        CommandParameter="{Binding ElementName=LoginWindow}">Login</Button>
+
+                <Button x:Name="btnRegisterLink" Style="{StaticResource ButtonLink}" HorizontalAlignment="Right" Click="btnRegisterLink_Click"
+                   >Register Now</Button>
+            </StackPanel>
+        </Grid>
+</Window>
+
+

@@ -1,0 +1,82 @@
+﻿<Page x:Class="BankManagementSystem.Pages.Update"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BankManagementSystem.Pages"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      x:Name="UpdatePage"
+      Title="Update">
+
+
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" ></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="tbHeading" FontSize="20" FontWeight="Bold" Grid.Row="0">Update</TextBlock>
+        <Label x:Name="lblCustomerName" FontWeight="Bold" Grid.Row="2">Customer Name:</Label>
+
+        <Label x:Name="lblAccountType" FontWeight="Bold" Grid.Row="3" Margin="0,11,0,22" Grid.RowSpan="2">Account Type:</Label>
+        <Label x:Name="lblDob" FontWeight="Bold" Grid.Row="4" Margin="0,14,0,17" Grid.RowSpan="2">Date of Birth:</Label>
+        <Label x:Name="lblNationality" FontWeight="Bold" Grid.Row="5" Margin="0,17,0,15" Grid.RowSpan="2">Nationality:</Label>
+        <Label x:Name="lblAddress" FontWeight="Bold" Grid.Row="6" Margin="0,22,0,10" Grid.RowSpan="2">Address:</Label>
+        <Label x:Name="lblPhoneNumber" FontWeight="Bold" Grid.Row="7" Margin="0,22,0,12" Grid.RowSpan="2">Phone Number:</Label>
+        <Label x:Name="lblEmail" FontWeight="Bold" Grid.Row="8" Margin="0,22,0,10" Grid.RowSpan="2">Email ID:</Label>
+        <Label x:Name="lblOccupation" FontWeight="Bold" Grid.Row="9" Margin="6,20,394,12" Grid.RowSpan="2" Grid.ColumnSpan="2">Occupation:</Label>
+
+        <TextBox x:Name="txtCustomerName" Text="{Binding Name}" Grid.Row="2" Grid.Column="1" Height="20"></TextBox>
+
+        <ComboBox x:Name="cboAccountType" Grid.Row="3" Height="20" Grid.Column="1" Text="{Binding AccountType}" Margin="0,9,0,4">
+            <ComboBoxItem IsSelected="True"  >Savings</ComboBoxItem>
+            <ComboBoxItem >Current</ComboBoxItem>
+
+        </ComboBox>
+
+        <DatePicker  Grid.Row="4" SelectedDate="{Binding Dob}" Height="25" Margin="0,15,0,24" Grid.RowSpan="2" Grid.Column="1"/>
+        <ComboBox x:Name="cboNationality" Height="20" Grid.Row="5" Text="{Binding Nationality}" Margin="0,24,0,20" Grid.RowSpan="2" Grid.Column="1">
+            <ComboBoxItem>Indian</ComboBoxItem>
+            <ComboBoxItem>American</ComboBoxItem>
+            <ComboBoxItem>German</ComboBoxItem>
+            <ComboBoxItem>Italian</ComboBoxItem>
+            <ComboBoxItem>Japanese</ComboBoxItem>
+            <ComboBoxItem>Afghan</ComboBoxItem>
+            <ComboBoxItem>Chinese</ComboBoxItem>
+            <ComboBoxItem>Canadian</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="txtAddress" Grid.Row="6"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            VerticalScrollBarVisibility="Visible" Height="20" Text="{Binding Address}" Margin="0,28,0,16" Grid.RowSpan="2" Grid.Column="1"
+            />
+        <TextBox x:Name="txtPhoneNumber" Height="20" Grid.Row="7" Text="{Binding PhoneNumber}" Margin="0,27,0,17" Grid.RowSpan="2" Grid.Column="1"/>
+
+        <TextBox x:Name="txtOccupation" Grid.Row="10" Height="20" Text="{Binding Occupation}" Margin="0,1,0,12" Grid.Column="1"/>
+
+        <TextBox x:Name="txtEmail" Height="20" Grid.Row="8" Grid.Column="1" Width="396" Text="{Binding Email}" Margin="0,28,4,16" Grid.RowSpan="2"></TextBox>
+
+
+        <Button Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=UpdatePage}" x:Name="btnCreateAccount" Grid.Row="11" Grid.Column="2" Margin="36,31,49,0" Background="DarkSeaGreen" Height="31" Grid.RowSpan="2" VerticalAlignment="Top" >Update</Button>
+    </Grid>
+</Page>

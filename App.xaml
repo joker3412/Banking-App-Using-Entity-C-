@@ -1,0 +1,45 @@
+﻿<Application x:Class="BankManagementSystem.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BankManagementSystem"
+              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             StartupUri="LogIn.xaml"
+             >
+    <Application.Resources>
+        <sys:Double x:Key="TextXL">25</sys:Double>
+
+        <Style x:Key="ButtonPrimary" TargetType="Button">
+            <Setter Property="Background" Value="DodgerBlue"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+
+        <Style x:Key="ButtonLink" TargetType="Button">
+            <Setter Property="Foreground" Value="DodgerBlue"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter></ContentPresenter>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <x:Array Type="{x:Type sys:String}" x:Key="AccountType1">
+            <sys:String>Savings</sys:String>
+            <sys:String>Current</sys:String>
+        </x:Array>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <AdornerDecorator></AdornerDecorator>
+                            <TextBlock Text="{Binding ErrorContent}" Foreground="Red" ></TextBlock>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+       
+    </Application.Resources>
+</Application>

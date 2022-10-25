@@ -1,0 +1,26 @@
+﻿<Window x:Class="BankManagementSystem.Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankManagementSystem"
+        mc:Ignorable="d"
+         
+       
+        Title="Search" Height="450" Width="800"
+        x:Name="search">
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/Magnifier.png" ></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Label HorizontalAlignment="Center" FontSize="40" Foreground="#ffd200" FontWeight="Bold" Margin="0,50,0,0">SEARCH</Label>
+        <StackPanel Background="#FFFFD200" Margin="211,134,210,111" >
+            <Label Margin="0,30,0,0" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Account Number :</Label>
+            <TextBox Margin="0,10,10,0" Width="250" Background="White" Padding="2" Text="{Binding AccountNumber}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+
+            <Button Height="25" Margin="0,20,0,0" Width="50" Style="{StaticResource ButtonPrimary}" x:Name="btn_Search" Command="{Binding SearchCommand}"  CommandParameter="{Binding ElementName=search}" >Search</Button>
+            <Button Height="20" Width="70" Click="Button_Click" Margin="0,10" Content="Back" HorizontalAlignment="Center"/>
+        </StackPanel>
+       
+    </Grid>
+</Window>

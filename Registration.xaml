@@ -1,0 +1,41 @@
+﻿<Window x:Class="BankManagementSystem.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankManagementSystem" xmlns:viewmodel="clr-namespace:BankManagementSystem.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:RegistrationViewModel}"
+        mc:Ignorable="d"
+        x:Name="RegistrationWindow"
+        Title="Registration" Height="450" Width="800"
+        WindowState="Maximized"
+        >
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/LoginBackground.png"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock 
+                FontSize="{StaticResource TextXL}" 
+                TextAlignment="Center">Register</TextBlock>
+
+            <Label>Email</Label>
+            <TextBox Text="{Binding Email, ValidatesOnDataErrors=True}" x:Name="UserName"></TextBox>
+
+            <Label>Password</Label>
+            <PasswordBox  x:Name="txtPassword"></PasswordBox>
+
+            <Label>Confirm Password</Label>
+            <PasswordBox x:Name="txtCinfirmPassword" ></PasswordBox>
+
+            <Button Style="{StaticResource ButtonPrimary}" 
+                   Command="{Binding RegisterCommand}"
+                    CommandParameter="{Binding ElementName=RegistrationWindow}"
+                    Margin="0,10">Register</Button>
+        </StackPanel>
+    </Grid>
+</Window>

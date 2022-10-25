@@ -1,0 +1,39 @@
+﻿<Window x:Class="BankManagementSystem.ExistingAccountOperations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankManagementSystem"
+        mc:Ignorable="d"
+        x:Name="EXT"
+        Title="ExistingAccountOperations" Height="600" Width="800" WindowState="Maximized"
+        >
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/WELCOME.png"></ImageBrush>
+    </Window.Background>
+    <DockPanel>
+        <Menu Margin="0,10,0,0" DockPanel.Dock="Top" Cursor="Hand" Height="20" >
+            <MenuItem Header="_Edit">
+
+
+                <MenuItem   Header="_UpdateAccount" Click="MenuItem_Click"  />
+                <MenuItem Header="_DeleteAccount" x:Name="Delete" Click="Delete_Click" CommandParameter="{Binding ElementName=EXT}" />
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="_Account Details" x:Name="AccountDetail" Click="AccountDetail_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Deposit" Header="_Deposit" Click="Deposit_Click" ></MenuItem>
+            <MenuItem x:Name="Withdraw" Header="_Withdraw" Click="Withdraw_Click" ></MenuItem>
+            <MenuItem x:Name="Transfer" Header="_Transfer" Click="Transfer_Click"
+                     ></MenuItem>
+            <MenuItem x:Name="Transaction" Header="_Transactions" Click="Transaction_Click" ></MenuItem>
+            <MenuItem Header="Exit" Command="{Binding ExitCommand}"
+                        CommandParameter="{Binding ElementName=EXT}"></MenuItem>
+        </Menu>
+        <StackPanel Height="20" DockPanel.Dock="Top" Margin="0,10,0,0">
+            <TextBox Text="{Binding AccountNumber}" HorizontalAlignment="Center" IsEnabled="False"></TextBox></StackPanel>
+        
+        <Frame x:Name="pageContainer"   NavigationUIVisibility="Hidden" Margin="0,30,0,0" />
+    </DockPanel>
+  
+</Window>

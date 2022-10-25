@@ -1,0 +1,19 @@
+﻿<Page x:Class="BankManagementSystem.Pages.TransactionHistory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BankManagementSystem.Pages"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TransactionHistory">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" FontSize="30">Transaction History</TextBlock>
+        <DataGrid Margin="0,37,0,0" ItemsSource="{Binding Transactions}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>                <DataGridTextColumn Width="1" Header="Id" Binding="{Binding Id}"></DataGridTextColumn>                <DataGridTextColumn Width="1*" Header="Source Account" Binding="{Binding SourceAccount}"></DataGridTextColumn>                <DataGridTextColumn Width="1*" Header="Destination Account" Binding="{Binding DestinationAccount}"></DataGridTextColumn>                <DataGridTextColumn Width="1*" Header="DateTime" Binding="{Binding TransactionDate}"></DataGridTextColumn>                <DataGridTextColumn Width="1*" Header="Mode" Binding="{Binding Mode}"></DataGridTextColumn>                <DataGridTextColumn Width="1*" Header="Balance" Binding="{Binding RemainingBalance}"></DataGridTextColumn>            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Grid>
+</Page>
