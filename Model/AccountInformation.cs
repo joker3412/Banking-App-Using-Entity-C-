@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BankManagementSystem.Model
 {
-    internal class AccountInformation
+    internal class AccountInformations
     {
         public int Id { get; set; }
         [Required]
